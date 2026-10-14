@@ -1,0 +1,51 @@
+/* Base Setup */
+html {
+  scroll-behavior: smooth;
+}
+
+/* EXTRA 1: Custom Card Hover Transitions */
+.custom-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.125);
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* EXTRA 2: Prefers-Reduced-Motion Support (Accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .custom-card {
+    transition: none;
+  }
+  .custom-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* EXTRA 3: Prefers-Color-Scheme: Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  .lead {
+    color: #a0a0a0 !important;
+  }
+  .custom-card {
+    background-color: #1e1e1e;
+    border-color: #2c2c2c;
+    color: #ffffff;
+  }
+  .custom-card .card-title {
+    color: #ffffff;
+  }
+  .custom-card .card-text {
+    color: #b0b0b0;
+  }
+}
